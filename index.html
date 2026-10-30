@@ -73,6 +73,8 @@
   ul.det { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
   ul.det li { position: relative; padding-left: 26px; }
   ul.det li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; background: var(--gold); border-radius: 2px; }
+  .pub { display: inline-block; margin-left: 8px; font-size: 12px; font-weight: 700; color: #ffcd1e; letter-spacing: .04em; }
+  .credito { font-size: 11px; line-height: 1.4; color: #8b8b95; margin: 4px 0 0; }
   details { border-top: 1px solid var(--line); padding-top: 10px; }
   summary { cursor: pointer; font-weight: 700; color: var(--gold); padding: 6px 0; }
   details p { color: #cfcfd6; margin: 8px 0 0; white-space: pre-line; }
@@ -109,9 +111,9 @@
     <div>
       <div class="kicker">Edição especial · Outubro 2026</div>
       <h1>Magazine <em>Sr. Herculano</em></h1>
-      <p class="lead">Os produtos que apareceram na revista, com fotos e detalhes. Toque em <strong>Comprar</strong> para ver o produto no Mercado Livre.</p>
+      <p class="lead">Os três produtos que apareceram na revista. Toque em <strong>Comprar no Mercado Livre</strong> para ver o anúncio, o preço e as condições.</p>
       <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver os produtos</a></div>
-      <div class="aviso"><strong>Transparência:</strong> os botões Comprar levam ao Mercado Livre e são <strong>links de afiliado</strong>. Se você comprar por eles, posso receber uma comissão, sem custo adicional para você.</div>
+      <div class="aviso"><strong>#publi · Publicidade:</strong> os botões "Comprar no Mercado Livre" levam ao Mercado Livre e são <strong>links de afiliado</strong>. Se você comprar por eles, posso receber uma comissão, sem custo adicional para você.</div>
     </div>
   </div>
 </header>
@@ -120,14 +122,13 @@
   <section class="produtos" id="produtos">
     <div class="wrap">
       <h2 class="titulo">Os produtos da revista</h2>
-      <p class="subtitulo">Deslize as fotos para o lado para ver mais.</p>
-      <ul id="lista"></ul>
+            <ul id="lista"></ul>
     </div>
   </section>
 
   <section class="sobre">
     <div class="wrap" id="sobre">
-      <h2 class="titulo">Quem faz a revista</h2>
+      <h2 class="titulo">Acompanhe a revista</h2>
       <p id="textoSobre"></p>
       <div class="links" id="links"></div>
     </div>
@@ -136,7 +137,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Esta página contém links de afiliado do Mercado Livre. Preços, estoque, prazos e condições são definidos pelo Mercado Livre e podem mudar. Confira os detalhes na página do produto antes de comprar.</p>
+    <p>Esta é uma página independente e não é um canal oficial do Mercado Livre. Ela contém links de afiliado do Mercado Livre (#publi). Preços, estoque, prazos e condições são definidos pelo Mercado Livre e podem mudar. Confira os detalhes na página do produto antes de comprar.</p>
     <p>© Magazine Sr. Herculano</p>
   </div>
 </footer>
@@ -155,48 +156,16 @@
 var PRODUTOS = [
   {
     "etiqueta": "Família & segurança",
-    "nome": "Cadeirinha infantil Atentu BS05 (9 a 36 kg)",
-    "resumo": "Uma só cadeirinha para várias fases, para quando a criança sai do bebê conforto.",
+    "nome": "Cadeirinha infantil Atentu (9 a 36 kg)",
+    "resumo": "Cadeirinha Atentu para crianças de 9 a 36 kg.",
     "detalhes": [
-      "Certificada pelo INMETRO",
-      "Atende os grupos I, II e III, de 9 a 36 kg",
-      "Cinto de 5 pontos para segurar bem a criança",
-      "Estrutura em plástico de alta resistência",
-      "Acolchoado macio, tecido fácil de limpar e apoio lateral para cabeça e pescoço",
-      "Instalação universal com o cinto do próprio carro (sem Isofix)",
-      "Cores: preto, cinza e vermelho"
+      "Faixa de peso: de 9 a 36 kg (Grupos I, II e III)",
+      "Fixação com o cinto do veículo",
+      "Encosto acolchoado, confortável e fácil de limpar",
+      "Design compacto"
     ],
-    "descricao": "Cadeirinha veicular Atentu BS05, pensada para acompanhar o crescimento: uma única cadeirinha cobre várias fases, de 9 a 36 kg.\n\nSegurança: certificação do INMETRO, cinto de 5 pontos e estrutura de alta resistência.\n\nConforto: revestimento acolchoado, apoio lateral para a cabeça e o pescoço e tecido fácil de limpar.\n\nInstalação: universal, com o cinto de segurança do próprio carro. Siga o manual com calma ou procure um vídeo de instalação.\n\nImportante: até 1 ano de idade a criança deve ir no bebê conforto, conforme a regra do Contran.",
-    "duvidas": [
-      [
-        "Meu carro não tem Isofix.",
-        "Não precisa. Ela prende com o cinto de segurança do próprio carro."
-      ],
-      [
-        "Vou ter que trocar quando a criança crescer?",
-        "Ela vai de 9 a 36 kg e acompanha várias fases da criança."
-      ],
-      [
-        "É segura de verdade?",
-        "Tem certificação do INMETRO, cinto de 5 pontos e estrutura de alta resistência."
-      ],
-      [
-        "A criança fica confortável?",
-        "O revestimento é acolchoado e tem apoio lateral para cabeça e pescoço."
-      ],
-      [
-        "Suja fácil?",
-        "O tecido é de fácil limpeza, e a cor preta disfarça bem a sujeira."
-      ],
-      [
-        "É difícil de montar?",
-        "Vem com manual e usa só o cinto do carro. Siga o manual com calma ou procure um vídeo de instalação."
-      ],
-      [
-        "E se eu não gostar?",
-        "O Mercado Livre oferece devolução grátis em até 30 dias após o recebimento."
-      ]
-    ],
+    "descricao": "",
+    "duvidas": [],
     "fotos": [
       "cadeirinha-1.jpg"
     ],
@@ -205,93 +174,40 @@ var PRODUTOS = [
   {
     "etiqueta": "Eletrônicos",
     "nome": "Smartwatch Aurafit AM18, tela AMOLED 1,43\"",
-    "resumo": "Notificações e chamadas no pulso, com tela AMOLED e bateria de vários dias.",
+    "resumo": "Smartwatch com tela AMOLED, notificações e chamadas.",
     "detalhes": [
-      "Tela AMOLED de 1,43\" colorida e nítida",
-      "Recebe notificações e atende chamadas pelo relógio (Bluetooth)",
-      "Vários modos de exercício, sono, frequência cardíaca e oxigênio no sangue",
-      "Bateria de vários dias, com carregamento sem fio",
-      "Resistente a respingos, chuva e suor (IP67)",
-      "Compatível com Android 5.0+ e iOS 12+; menu em português",
-      "Acompanha cabo de carregamento, manual e 2 pulseiras"
+      "Tela AMOLED de 1,43\"",
+      "Recebe notificações e faz chamadas",
+      "Vários modos de exercício e monitoramento do sono",
+      "Bateria de até 15 dias, conforme o uso"
     ],
-    "descricao": "Smartwatch Aurafit AM18 (versão 2025), com tela AMOLED redonda de 1,43 polegadas e caixa em liga de zinco.\n\nNo dia a dia: notificações de chamadas, WhatsApp e redes sociais, chamadas por Bluetooth, controle de música, controle remoto da câmera, clima, alarme e localizar celular.\n\nSaúde e esporte: vários modos de exercício, passos, distância e calorias, monitor de sono, frequência cardíaca e oxigênio no sangue. Os dados são de referência e não substituem avaliação médica.\n\nBateria: 300 mAh com carregamento sem fio. A duração varia conforme o uso; nas avaliações de compradores, de 5 a 15 dias.\n\nIP67: protege contra respingos, chuva e suor. Não é indicado para mergulho. Não tem GPS próprio.\n\nNa caixa: 1 smartwatch, 1 cabo de carregamento sem fio, 1 manual e 2 pulseiras compatíveis.",
-    "duvidas": [
-      [
-        "Funciona no meu celular?",
-        "Sim, em Android 5.0 ou superior e iPhone com iOS 12 ou superior."
-      ],
-      [
-        "Posso atender ligações?",
-        "Sim, por Bluetooth, com o relógio conectado ao celular."
-      ],
-      [
-        "Posso entrar na piscina ou no mar?",
-        "Não é indicado. O IP67 protege de respingos, chuva e suor."
-      ],
-      [
-        "Tem GPS?",
-        "Não. O percurso usa o GPS do celular."
-      ],
-      [
-        "Quanto dura a bateria?",
-        "Depende do uso. Compradores relatam de 5 a 15 dias."
-      ],
-      [
-        "E se eu não gostar?",
-        "O Mercado Livre oferece devolução grátis em até 30 dias após o recebimento."
-      ]
-    ],
+    "descricao": "",
+    "duvidas": [],
     "fotos": [
-      "smartwatch-1.jpg",
-      "smartwatch-2.jpg"
+      "smartwatch-1.jpg"
     ],
     "link": "https://meli.la/1XTW6VC"
   },
   {
     "etiqueta": "Moda masculina",
     "nome": "Óculos de sol Barcur polarizado UV400",
-    "resumo": "Estilo e proteção para o dia a dia, a pesca e o esporte.",
+    "resumo": "Óculos de sol masculino polarizado com proteção UV400.",
     "detalhes": [
-      "Lentes polarizadas TAC com proteção UV400",
-      "Armação e hastes em TR90, leve e resistente",
-      "Formato retangular, tamanho médio (lente 5,8 x 4,6 cm)",
-      "Acompanha case, flanela de limpeza e teste de polaridade",
-      "Cores: preto, preto com linha vermelha, azul-marinho e outras",
+      "Lentes polarizadas com proteção UV400",
+      "Armação em TR90",
+      "Acompanha case, flanela e teste de polaridade",
       "Anúncio informa nota fiscal e garantia do vendedor"
     ],
-    "descricao": "Óculos de sol masculino Barcur, com design retangular esportivo e clássico.\n\nLentes: TAC polarizadas, que reduzem reflexos, com proteção UV400.\n\nArmação: TR90, material leve e durável, confortável para o uso diário e para atividades ao ar livre, como pesca, esportes e passeios.\n\nMedidas: largura da lente 5,8 cm, altura 4,6 cm e ponte de 2 cm.\n\nNa caixa: 1 óculos, 1 case, 1 flanela de limpeza e 1 teste de polaridade.\n\nDica: limpe as lentes com a flanela que acompanha. Ao comprar, confira a cor escolhida no anúncio.",
-    "duvidas": [
-      [
-        "O que é lente polarizada?",
-        "Reduz o reflexo da luz no asfalto, na água e em superfícies claras, deixando a visão mais confortável."
-      ],
-      [
-        "Protege contra raios UV?",
-        "Sim, o anúncio informa proteção UV400."
-      ],
-      [
-        "Serve no meu rosto?",
-        "É tamanho médio. Confira as medidas: lente de 5,8 x 4,6 cm e ponte de 2 cm."
-      ],
-      [
-        "Vem com estojo?",
-        "Sim: case, flanela e teste de polaridade."
-      ],
-      [
-        "E se eu não gostar?",
-        "O Mercado Livre oferece devolução grátis em até 30 dias após o recebimento."
-      ]
-    ],
+    "descricao": "",
+    "duvidas": [],
     "fotos": [
-      "oculos-1.jpg",
-      "oculos-2.jpg"
+      "oculos-1.jpg"
     ],
     "link": "https://meli.la/2W3ojLX"
   }
 ];
 
-var SOBRE = "Olavo Maurício de Freitas. Fui barbeiro por mais de 8 anos, gerente de uma grande loja varejista liderando uma equipe de 9 mulheres e hoje atuo com gestão financeira, conduzindo pessoas até a conquista de um automóvel de trabalho, da vida e da família. A revista é a minha forma de contar essa história e indicar produtos de que gosto.";
+var SOBRE = "Siga a revista no Instagram para ver as próximas edições.";
 
 /* Links dos botões. Deixe vazio ("") para o botão não aparecer.
    INSTAGRAM: endereço do seu perfil, por exemplo "https://www.instagram.com/seuperfil"
@@ -368,11 +284,12 @@ PRODUTOS.forEach(function (p) {
   var info = document.createElement("div");
   info.className = "info";
   var tag = document.createElement("span"); tag.className = "tag"; tag.textContent = p.etiqueta;
+  var pub = document.createElement("span"); pub.className = "pub"; pub.textContent = "#publi";
   var h3 = document.createElement("h3"); h3.textContent = p.nome;
   var resumo = document.createElement("p"); resumo.className = "resumo"; resumo.textContent = p.resumo;
   var ul = document.createElement("ul"); ul.className = "det";
   p.detalhes.forEach(function (t) { var l = document.createElement("li"); l.textContent = t; ul.appendChild(l); });
-  info.appendChild(tag); info.appendChild(h3); info.appendChild(resumo); info.appendChild(ul);
+  info.appendChild(tag); info.appendChild(pub); info.appendChild(h3); info.appendChild(resumo); info.appendChild(ul);
 
   if (p.descricao) {
     var det = document.createElement("details");
@@ -390,11 +307,14 @@ PRODUTOS.forEach(function (p) {
   }
 
   var a = document.createElement("a");
-  a.className = "btn"; a.textContent = "Comprar";
+  a.className = "btn"; a.textContent = "Comprar no Mercado Livre";
   a.href = p.link; a.target = "_blank"; a.rel = "sponsored noopener noreferrer";
-  a.setAttribute("aria-label", "Comprar " + p.nome + " no Mercado Livre");
+  a.setAttribute("aria-label", "Comprar " + p.nome + " no Mercado Livre (link de afiliado)");
   var nota = document.createElement("p"); nota.className = "nota"; nota.textContent = "Você será levado ao Mercado Livre para finalizar a compra.";
   info.appendChild(a); info.appendChild(nota);
+  var cred = document.createElement("p"); cred.className = "credito";
+  cred.textContent = "Imagens do anúncio no Mercado Livre. Direitos reservados aos respectivos proprietários.";
+  info.appendChild(cred);
 
   art.appendChild(info);
   li.appendChild(art);
