@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magazine Sr. Herculano · Indicações</title>
+<meta name="description" content="Os produtos que apareceram na Magazine Sr. Herculano, edição especial de outubro de 2026. Links de afiliado do Mercado Livre.">
+<meta property="og:title" content="Magazine Sr. Herculano · Indicações">
+<meta property="og:description" content="Os produtos que apareceram na edição especial. Toque em Comprar para ver no Mercado Livre.">
+<meta property="og:image" content="img/capa.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Oswald:wght@500;700&display=swap">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --card: #151518;
+    --line: #2a2a2f;
+    --fg: #f4f4f5;
+    --muted: #a9a9b2;
+    --gold: #ffcd1e;
+    --gold-fg: #111;
+    --red: #d61c18;
+    --display: "Oswald", "Arial Narrow", Impact, system-ui, sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* ---------- topo ---------- */
+  .hero { padding: 28px 0 40px; background: radial-gradient(900px 400px at 20% 0%, #231d08 0%, transparent 70%); }
+  .hero .wrap { display: grid; gap: 24px; align-items: center; }
+  .capa { width: min(78vw, 360px); margin: 0 auto; border-radius: 6px; box-shadow: 0 18px 50px rgba(0,0,0,.7), 0 0 0 1px #2a2a2f; }
+  .kicker { font-family: var(--display); color: var(--gold); letter-spacing: .12em; text-transform: uppercase; font-size: 15px; font-weight: 500; }
+  h1 { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: clamp(34px, 8vw, 56px); line-height: 1.02; margin: 6px 0 12px; text-wrap: balance; }
+  h1 em { color: var(--gold); font-style: normal; }
+  .lead { color: #d6d6dc; margin: 0 0 18px; max-width: 46ch; }
+  .cta { display: inline-block; background: var(--gold); color: var(--gold-fg); font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 12px; }
+  .cta:focus-visible, .btn:focus-visible, .nav:focus-visible, .dot:focus-visible, summary:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .botoes { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cta.alt { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .aviso { margin-top: 18px; background: #1d1a0c; border: 1px solid #5a4a10; border-radius: 12px; padding: 12px 14px; font-size: 15px; color: #e8e2c8; }
+  .aviso strong { color: var(--gold); }
+
+  /* ---------- produtos ---------- */
+  section.produtos { padding: 8px 0 24px; }
+  h2.titulo { font-family: var(--display); text-transform: uppercase; font-size: clamp(28px, 6vw, 40px); margin: 0 0 6px; }
+  .subtitulo { color: var(--muted); margin: 0 0 22px; }
+  #lista { display: grid; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  .produto { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; }
+
+  .galeria { position: relative; background: #000; }
+  .faixa { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .faixa::-webkit-scrollbar { display: none; }
+  .faixa figure { flex: 0 0 100%; margin: 0; scroll-snap-align: center; aspect-ratio: 1 / 1; background: #000; }
+  .faixa img { width: 100%; height: 100%; object-fit: contain; }
+  .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.62); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+  .nav.prev { left: 10px; } .nav.next { right: 10px; }
+  .nav[disabled] { opacity: .25; cursor: default; }
+  .dots { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; justify-content: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: rgba(255,255,255,.45); cursor: pointer; }
+  .dot[aria-current="true"] { background: var(--gold); transform: scale(1.25); }
+  .contagem { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.6); border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 600; }
+
+  .info { padding: 18px 18px 20px; display: grid; gap: 12px; align-content: start; }
+  .tag { justify-self: start; background: var(--red); color: #fff; font-weight: 800; font-size: 12px; letter-spacing: .07em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; }
+  h3 { font-family: var(--display); font-size: 28px; line-height: 1.12; margin: 0; text-transform: uppercase; font-weight: 700; }
+  .resumo { margin: 0; color: #d3d3d9; }
+  ul.det { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+  ul.det li { position: relative; padding-left: 26px; }
+  ul.det li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; background: var(--gold); border-radius: 2px; }
+  .pub { display: inline-block; margin-left: 8px; font-size: 12px; font-weight: 700; color: #ffcd1e; letter-spacing: .04em; }
+  .credito { font-size: 11px; line-height: 1.4; color: #8b8b95; margin: 4px 0 0; }
+  details { border-top: 1px solid var(--line); padding-top: 10px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--gold); padding: 6px 0; }
+  details p { color: #cfcfd6; margin: 8px 0 0; white-space: pre-line; }
+  .btn { display: block; text-align: center; text-decoration: none; background: var(--gold); color: var(--gold-fg); font-weight: 800; font-size: 20px; letter-spacing: .02em; padding: 16px; border-radius: 14px; margin-top: 4px; }
+  .btn:hover { filter: brightness(1.08); }
+  .nota { margin: 0; font-size: 13px; color: var(--muted); text-align: center; }
+
+  /* ---------- sobre ---------- */
+  .sobre { padding: 32px 0 20px; border-top: 1px solid var(--line); margin-top: 20px; }
+  .sobre .wrap { display: grid; gap: 14px; }
+  .sobre p { margin: 0; color: #d3d3d9; max-width: 62ch; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .links a { border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 10px; }
+  footer { padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
+  footer p { margin: 0 0 8px; max-width: 70ch; }
+
+  /* ---------- telas maiores ---------- */
+  @media (min-width: 760px) {
+    body { font-size: 18px; }
+    .hero .wrap { grid-template-columns: 340px 1fr; gap: 48px; }
+    .capa { width: 100%; }
+    .produto { grid-template-columns: 1fr 1fr; }
+    .produto .info { padding: 28px; }
+    .produto:nth-child(even) .galeria { order: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .faixa { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="capa" src="img/capa.jpg" alt="Capa da Magazine Sr. Herculano, edição especial de outubro de 2026" width="900" height="1205">
+    <div>
+      <div class="kicker">Edição especial · Outubro 2026</div>
+      <h1>Magazine <em>Sr. Herculano</em></h1>
+      <p class="lead">Os três produtos que apareceram na revista. Toque em <strong>Comprar no Mercado Livre</strong> para ver o anúncio, o preço e as condições.</p>
+      <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver os produtos</a></div>
+      <div class="aviso"><strong>#publi · Publicidade:</strong> os botões "Comprar no Mercado Livre" levam ao Mercado Livre e são <strong>links de afiliado</strong>. Se você comprar por eles, posso receber uma comissão, sem custo adicional para você.</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="produtos" id="produtos">
+    <div class="wrap">
+      <h2 class="titulo">Os produtos da revista</h2>
+            <ul id="lista"></ul>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="wrap" id="sobre">
+      <h2 class="titulo">Acompanhe a revista</h2>
+      <p id="textoSobre"></p>
+      <div class="links" id="links"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Esta é uma página independente e não é um canal oficial do Mercado Livre. Ela contém links de afiliado do Mercado Livre (#publi). Preços, estoque, prazos e condições são definidos pelo Mercado Livre e podem mudar. Confira os detalhes na página do produto antes de comprar.</p>
+    <p>© Magazine Sr. Herculano</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   EDITE AQUI  (só o que está entre aspas "...")
+   ---------------------------------------------------------------------
+   - Cada produto é um bloco { ... }.
+   - fotos: lista de arquivos da pasta img/. Para colocar mais fotos,
+     envie a imagem para a pasta img/ e acrescente o nome na lista.
+   - detalhes: os pontos principais (aparecem com o quadradinho amarelo).
+   - descricao: o texto completo do produto. Pode colar várias linhas.
+   - link: o link de afiliado do botão Comprar.
+   ===================================================================== */
+var PRODUTOS = [
+  {
+    "etiqueta": "Família & segurança",
+    "nome": "Cadeirinha infantil Atentu (9 a 36 kg)",
+    "resumo": "Cadeirinha Atentu para crianças de 9 a 36 kg.",
+    "detalhes": [
+      "Faixa de peso: de 9 a 36 kg (Grupos I, II e III)",
+      "Fixação com o cinto do veículo",
+      "Encosto acolchoado, confortável e fácil de limpar",
+      "Design compacto"
+    ],
+    "descricao": "",
+    "duvidas": [],
+    "fotos": [
+      "cadeirinha-1.jpg"
+    ],
+    "link": "https://meli.la/2DBxk3N"
+  },
+  {
+    "etiqueta": "Eletrônicos",
+    "nome": "Smartwatch Aurafit AM18, tela AMOLED 1,43\"",
+    "resumo": "Smartwatch com tela AMOLED, notificações e chamadas.",
+    "detalhes": [
+      "Tela AMOLED de 1,43\"",
+      "Recebe notificações e faz chamadas",
+      "Vários modos de exercício e monitoramento do sono",
+      "Bateria de até 15 dias, conforme o uso"
+    ],
+    "descricao": "",
+    "duvidas": [],
+    "fotos": [
+      "smartwatch-1.jpg"
+    ],
+    "link": "https://meli.la/1XTW6VC"
+  },
+  {
+    "etiqueta": "Moda masculina",
+    "nome": "Óculos de sol Barcur polarizado UV400",
+    "resumo": "Óculos de sol masculino polarizado com proteção UV400.",
+    "detalhes": [
+      "Lentes polarizadas com proteção UV400",
+      "Armação em TR90",
+      "Acompanha case, flanela e teste de polaridade",
+      "Anúncio informa nota fiscal e garantia do vendedor"
+    ],
+    "descricao": "",
+    "duvidas": [],
+    "fotos": [
+      "oculos-1.jpg"
+    ],
+    "link": "https://meli.la/2W3ojLX"
+  }
+];
+
+var SOBRE = "Siga a revista no Instagram para ver as próximas edições.";
+
+/* Links dos botões. Deixe vazio ("") para o botão não aparecer.
+   INSTAGRAM: endereço do seu perfil, por exemplo "https://www.instagram.com/seuperfil"
+   WHATSAPP:  por exemplo "https://wa.me/5532999990883" (código do país + DDD + número, sem espaços) */
+var INSTAGRAM = "https://www.instagram.com/olavo_mauricio";
+var WHATSAPP = "https://wa.me/message/KQNRJPBPFKBJN1";
+/* ================== daqui para baixo não precisa mexer ================== */
+
+var lista = document.getElementById("lista");
+
+PRODUTOS.forEach(function (p) {
+  var li = document.createElement("li");
+  var art = document.createElement("article");
+  art.className = "produto";
+
+  /* galeria */
+  var gal = document.createElement("div");
+  gal.className = "galeria";
+  var faixa = document.createElement("div");
+  faixa.className = "faixa";
+  faixa.setAttribute("tabindex", "0");
+  faixa.setAttribute("role", "group");
+  faixa.setAttribute("aria-label", "Fotos de " + p.nome);
+  p.fotos.forEach(function (f, i) {
+    var fig = document.createElement("figure");
+    var img = document.createElement("img");
+    img.src = "img/" + f;
+    img.alt = p.nome + " (foto " + (i + 1) + " de " + p.fotos.length + ")";
+    if (i > 0) img.loading = "lazy";
+    fig.appendChild(img);
+    faixa.appendChild(fig);
+  });
+  gal.appendChild(faixa);
+
+  if (p.fotos.length > 1) {
+    var prev = document.createElement("button");
+    prev.className = "nav prev"; prev.type = "button"; prev.setAttribute("aria-label", "Foto anterior"); prev.textContent = "‹";
+    var next = document.createElement("button");
+    next.className = "nav next"; next.type = "button"; next.setAttribute("aria-label", "Próxima foto"); next.textContent = "›";
+    var cont = document.createElement("div");
+    cont.className = "contagem"; cont.setAttribute("aria-hidden", "true");
+    var dots = document.createElement("div");
+    dots.className = "dots";
+    var dotEls = p.fotos.map(function (_, i) {
+      var d = document.createElement("button");
+      d.className = "dot"; d.type = "button"; d.setAttribute("aria-label", "Ir para a foto " + (i + 1));
+      d.addEventListener("click", function () { faixa.scrollTo({ left: i * faixa.clientWidth, behavior: "smooth" }); });
+      dots.appendChild(d);
+      return d;
+    });
+    function atual() { var w = faixa.clientWidth; return w ? Math.round(faixa.scrollLeft / w) : 0; }
+    function atualizar() {
+      var i = Math.max(0, Math.min(p.fotos.length - 1, atual()));
+      dotEls.forEach(function (d, k) { if (k === i) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
+      prev.disabled = i === 0; next.disabled = i === p.fotos.length - 1;
+      cont.textContent = (i + 1) + " / " + p.fotos.length;
+    }
+    prev.addEventListener("click", function () { faixa.scrollBy({ left: -faixa.clientWidth, behavior: "smooth" }); });
+    next.addEventListener("click", function () { faixa.scrollBy({ left: faixa.clientWidth, behavior: "smooth" }); });
+    faixa.addEventListener("scroll", function () { window.requestAnimationFrame(atualizar); }, { passive: true });
+    faixa.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
+    });
+    window.addEventListener("resize", atualizar);
+    window.addEventListener("load", atualizar);
+    gal.appendChild(prev); gal.appendChild(next); gal.appendChild(cont); gal.appendChild(dots);
+    atualizar();
+    setTimeout(atualizar, 0);
+  }
+  art.appendChild(gal);
+
+  /* informações */
+  var info = document.createElement("div");
+  info.className = "info";
+  var tag = document.createElement("span"); tag.className = "tag"; tag.textContent = p.etiqueta;
+  var pub = document.createElement("span"); pub.className = "pub"; pub.textContent = "#publi";
+  var h3 = document.createElement("h3"); h3.textContent = p.nome;
+  var resumo = document.createElement("p"); resumo.className = "resumo"; resumo.textContent = p.resumo;
+  var ul = document.createElement("ul"); ul.className = "det";
+  p.detalhes.forEach(function (t) { var l = document.createElement("li"); l.textContent = t; ul.appendChild(l); });
+  info.appendChild(tag); info.appendChild(pub); info.appendChild(h3); info.appendChild(resumo); info.appendChild(ul);
+
+  if (p.descricao) {
+    var det = document.createElement("details");
+    var sum = document.createElement("summary"); sum.textContent = "Descrição completa";
+    var dp = document.createElement("p"); dp.textContent = p.descricao;
+    det.appendChild(sum); det.appendChild(dp); info.appendChild(det);
+  }
+
+  if (p.duvidas && p.duvidas.length) {
+    var det2 = document.createElement("details");
+    var sum2 = document.createElement("summary"); sum2.textContent = "Dúvidas comuns";
+    var dp2 = document.createElement("p");
+    dp2.textContent = p.duvidas.map(function (d) { return d[0] + "\n" + d[1]; }).join("\n\n");
+    det2.appendChild(sum2); det2.appendChild(dp2); info.appendChild(det2);
+  }
+
+  var a = document.createElement("a");
+  a.className = "btn"; a.textContent = "Comprar no Mercado Livre";
+  a.href = p.link; a.target = "_blank"; a.rel = "sponsored noopener noreferrer";
+  a.setAttribute("aria-label", "Comprar " + p.nome + " no Mercado Livre (link de afiliado)");
+  var nota = document.createElement("p"); nota.className = "nota"; nota.textContent = "Você será levado ao Mercado Livre para finalizar a compra.";
+  info.appendChild(a); info.appendChild(nota);
+  var cred = document.createElement("p"); cred.className = "credito";
+  cred.textContent = "Imagens do anúncio no Mercado Livre. Direitos reservados aos respectivos proprietários.";
+  info.appendChild(cred);
+
+  art.appendChild(info);
+  li.appendChild(art);
+  lista.appendChild(li);
+});
+
+document.getElementById("textoSobre").textContent = SOBRE;
+var linksEl = document.getElementById("links");
+function botao(texto, link) {
+  var a = document.createElement("a");
+  a.href = link; a.textContent = texto; a.target = "_blank"; a.rel = "noopener noreferrer";
+  return a;
+}
+if (INSTAGRAM) linksEl.appendChild(botao("Voltar para o Instagram", INSTAGRAM));
+if (WHATSAPP) linksEl.appendChild(botao("Falar no WhatsApp", WHATSAPP));
+if (!linksEl.children.length) linksEl.hidden = true;
+
+/* botão "Voltar para o Instagram" também no topo */
+if (INSTAGRAM) {
+  var topo = document.getElementById("topoBotoes");
+  var ig = botao("Voltar para o Instagram", INSTAGRAM); ig.className = "cta alt";
+  topo.appendChild(ig);
+}
+</script>
+</body>
+</html>
