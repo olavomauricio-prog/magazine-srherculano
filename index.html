@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Magazine Sr. Herculano · Indicações</title>
-<meta name="description" content="Os produtos que apareceram na Magazine Sr. Herculano, edição especial de novembro de 2026. Links de afiliado do Mercado Livre.">
+<title>Magazine Sr. Herculano · Notícias e indicações</title>
+<meta name="description" content="Notícias de tecnologia da semana e os produtos mais vendidos da Black Friday, escolhidos pela Magazine Sr. Herculano. Links de afiliado do Mercado Livre.">
 <meta property="og:title" content="Magazine Sr. Herculano · Indicações">
-<meta property="og:description" content="Os produtos que apareceram na edição especial. Toque em Comprar para ver no Mercado Livre.">
+<meta property="og:description" content="4 notícias de tecnologia da semana e os mais vendidos da Black Friday.">
 <meta property="og:image" content="img/capa.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@
   section.produtos { padding: 8px 0 24px; }
   h2.titulo { font-family: var(--display); text-transform: uppercase; font-size: clamp(28px, 6vw, 40px); margin: 0 0 6px; }
   .subtitulo { color: var(--muted); margin: 0 0 22px; }
-  #lista { display: grid; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  .lista { display: grid; gap: 28px; list-style: none; margin: 0; padding: 0; }
   .produto { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; }
 
   .galeria { position: relative; background: #000; }
@@ -58,6 +58,7 @@
   .faixa::-webkit-scrollbar { display: none; }
   .faixa figure { flex: 0 0 100%; margin: 0; scroll-snap-align: center; aspect-ratio: 1 / 1; background: #000; }
   .faixa img { width: 100%; height: 100%; object-fit: contain; }
+  .galeria:has(img[src^="http"]) , .galeria:has(img[src^="http"]) figure { background: #fff; }
   .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.62); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
   .nav.prev { left: 10px; } .nav.next { right: 10px; }
   .nav[disabled] { opacity: .25; cursor: default; }
@@ -84,6 +85,23 @@
   .btn { display: block; text-align: center; text-decoration: none; background: var(--gold); color: var(--gold-fg); font-weight: 800; font-size: 20px; letter-spacing: .02em; padding: 16px; border-radius: 14px; margin-top: 4px; }
   .btn:hover { filter: brightness(1.08); }
   .nota { margin: 0; font-size: 13px; color: var(--muted); text-align: center; }
+
+
+  /* ---------- notícias ---------- */
+  section.noticias { padding: 32px 0 8px; }
+  .materias { display: grid; gap: 18px; list-style: none; margin: 0; padding: 0; }
+  .materia { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 14px; padding: 18px; display: grid; gap: 10px; }
+  .materia .tag { background: #2a2a2f; color: var(--gold); }
+  .materia .ilus { width: 100%; height: auto; display: block; border-radius: 10px; }
+  .materia .tag { justify-self: start; }
+  .materia h3 { font-size: 24px; }
+  .materia p { margin: 0; color: #d3d3d9; }
+  .materia .fonte { font-size: 13px; color: var(--muted); }
+  .materia .fonte a { color: var(--gold); }
+  .gancho { font-family: var(--display); font-size: 22px; line-height: 1.2; color: var(--gold); margin: 0; }
+  .produto.semfoto { grid-template-columns: 1fr; }
+  h2.titulo.segundo { margin-top: 40px; }
+  @media (min-width: 760px) { .materias { grid-template-columns: 1fr 1fr; } }
 
   /* ---------- sobre ---------- */
   .sobre { padding: 32px 0 20px; border-top: 1px solid var(--line); margin-top: 20px; }
@@ -114,8 +132,8 @@
     <div>
       <div class="kicker">Edição especial · Novembro 2026</div>
       <h1>Magazine <em>Sr. Herculano</em></h1>
-      <p class="lead">Os três produtos que apareceram na revista. Toque em <strong>Comprar no Mercado Livre</strong> para ver o anúncio, o preço e as condições.</p>
-      <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver os produtos</a></div>
+      <p class="lead">As notícias de tecnologia da semana e os mais vendidos da Black Friday. Toque em <strong>Comprar no Mercado Livre</strong> para ver o anúncio, o preço e as condições.</p>
+      <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver os produtos</a><a class="cta alt" href="#noticias">Ler as notícias</a></div>
       <div class="aviso"><strong>#publi · Publicidade:</strong> os botões "Comprar no Mercado Livre" levam ao Mercado Livre e são <strong>links de afiliado</strong>. Se você comprar por eles, posso receber uma comissão, sem custo adicional para você.</div>
     </div>
   </div>
@@ -129,10 +147,74 @@
     </div>
   </section>
 
+
+  <section class="noticias" id="noticias">
+    <div class="wrap">
+      <h2 class="titulo">Tecnologia em 4 notícias</h2>
+      <p class="subtitulo">O que aconteceu na semana de 9 de novembro de 2026.</p>
+      <ul class="materias">
+        <li><article class="materia">
+          <svg class="ilus" viewBox="0 0 640 260" role="img" aria-label="Ilustração: chip de computador sob uma lupa" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2f08"/><stop offset="1" stop-color="#0b0b0c"/></linearGradient></defs>
+            <rect width="640" height="260" fill="url(#g1)"/>
+            <g fill="none" stroke="#ffcd1e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><rect x="216" y="62" width="136" height="136" rx="14"/><rect x="254" y="100" width="60" height="60" rx="6" fill="#ffcd1e" stroke="none"/><path d="M236 62v-26M236 198v26"/><path d="M268 62v-26M268 198v26"/><path d="M300 62v-26M300 198v26"/><path d="M332 62v-26M332 198v26"/><path d="M216 82h-26M352 82h26"/><path d="M216 114h-26M352 114h26"/><path d="M216 146h-26M352 146h26"/><path d="M216 178h-26M352 178h26"/><circle cx="430" cy="150" r="52" stroke="#f4f4f5" fill="#0b0b0c" fill-opacity=".55"/><path d="M468 188l44 44" stroke="#f4f4f5" stroke-width="14"/><path d="M430 126v30" stroke="#d61c18"/><circle cx="430" cy="174" r="5" fill="#d61c18" stroke="none"/></g>
+          </svg>
+          <span class="tag">Negócios</span>
+          <h3>Nvidia investiga o próprio CEO após suspeita de espionagem</h3>
+          <p>A Nvidia, maior fabricante de chips de inteligência artificial do mundo, abriu no domingo (8) uma investigação independente sobre o seu CEO, Jensen Huang. A empresa quer saber se ele foi alvo de uma operação de inteligência estrangeira.</p>
+          <p><strong>O que está confirmado:</strong> Huang admitiu aos funcionários que teve um caso extraconjugal. As ações caíram e acionistas entraram com um processo contra a empresa na Califórnia.</p>
+          <p><strong>O que não está confirmado:</strong> a suspeita de que a mulher, ex-executiva de uma empresa de Singapura, atuasse para a inteligência chinesa. Nada foi provado, e a China nega.</p>
+          <p class="fonte">Fontes: <a href="https://www.cnnbrasil.com.br/economia/money/tecnologia/quem-e-jensen-huang-ceo-da-nvidia-investigado-por-affair-com-suposta-espia/" target="_blank" rel="noopener noreferrer">CNN Brasil</a> e <a href="https://www.metropoles.com/mundo/acionistas-processam-nvidia-e-ceo-jensen-huang-por-caso-com-espia-chinesa" target="_blank" rel="noopener noreferrer">Metrópoles</a></p>
+        </article></li>
+        <li><article class="materia">
+          <svg class="ilus" viewBox="0 0 640 260" role="img" aria-label="Ilustração: estrela de inteligência artificial ligada a pontos de rede" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2f08"/><stop offset="1" stop-color="#0b0b0c"/></linearGradient></defs>
+            <rect width="640" height="260" fill="url(#g2)"/>
+            <g fill="none" stroke="#ffcd1e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M320 130L150 70M320 130L140 190M320 130L500 64M320 130L506 196" stroke="#6b5a14" stroke-width="5"/><circle cx="150" cy="70" r="14" fill="#0b0b0c"/><circle cx="140" cy="190" r="14" fill="#0b0b0c"/><circle cx="500" cy="64" r="14" fill="#0b0b0c"/><circle cx="506" cy="196" r="14" fill="#0b0b0c"/><path d="M320 42Q336 114 408 130Q336 146 320 218Q304 146 232 130Q304 114 320 42Z" fill="#ffcd1e" stroke="none"/><path d="M430 44Q435 65 456 70Q435 75 430 96Q425 75 404 70Q425 65 430 44Z" fill="#f4f4f5" stroke="none"/><path d="M222 176Q226 192 242 196Q226 200 222 216Q218 200 202 196Q218 192 222 176Z" fill="#f4f4f5" stroke="none"/></g>
+          </svg>
+          <span class="tag">Inteligência artificial</span>
+          <h3>Google libera o Gemini 4 Carbon</h3>
+          <p>O Google abriu ao público, na terça (10), o Gemini 4 Carbon, que a empresa apresenta como o seu modelo de IA mais capaz. Ele é voltado a tarefas longas e difíceis, como programação, pesquisa científica e segurança digital.</p>
+          <p>O acesso é para desenvolvedores e empresas pagantes e para assinantes do plano Google AI Ultra. Para o dia a dia, o próprio Google segue indicando o modelo anterior, o Gemini 4 Argon.</p>
+          <p class="fonte">Fonte: <a href="https://blog.google/intl/pt-br/novidades/tecnologia/gemini-4-carbon-disponivel" target="_blank" rel="noopener noreferrer">Blog do Google Brasil</a></p>
+        </article></li>
+        <li><article class="materia">
+          <svg class="ilus" viewBox="0 0 640 260" role="img" aria-label="Ilustração: livro aberto com um balão de conversa de IA" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2f08"/><stop offset="1" stop-color="#0b0b0c"/></linearGradient></defs>
+            <rect width="640" height="260" fill="url(#g3)"/>
+            <g fill="none" stroke="#ffcd1e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M320 96c-40-24-90-26-130-12v112c40-14 90-12 130 12c40-24 90-26 130-12V84c-40-14-90-12-130 12z"/><path d="M320 96v112"/><path d="M222 118c22-4 44-2 66 8M222 150c22-4 44-2 66 8" stroke="#f4f4f5" stroke-width="6"/><rect x="388" y="34" width="124" height="76" rx="20" fill="#ffcd1e" stroke="none"/><path d="M412 104l-8 30 36-26z" fill="#ffcd1e" stroke="none"/><circle cx="424" cy="72" r="7" fill="#111" stroke="none"/><circle cx="450" cy="72" r="7" fill="#111" stroke="none"/><circle cx="476" cy="72" r="7" fill="#111" stroke="none"/></g>
+          </svg>
+          <span class="tag">Educação</span>
+          <h3>MEC define regras para IA nas escolas</h3>
+          <p>O Ministério da Educação homologou na terça (10) as regras para o uso de inteligência artificial em escolas e universidades, públicas e privadas.</p>
+          <p>Crianças da educação infantil não podem usar IA. Do 1º ao 5º ano, o aluno não conversa direto com chatbots. A partir do 6º ano, o uso é liberado com orientação do professor. Nenhum sistema pode decidir sozinho se o aluno é aprovado ou reprovado. As redes de ensino têm 12 meses para se adaptar.</p>
+          <p class="fonte">Fonte: <a href="https://acritica.net/nacional/mec-aprova-regras-para-uso-de-inteligencia-artificial-nas-escolas-veja-o-que-muda/" target="_blank" rel="noopener noreferrer">A Crítica</a></p>
+        </article></li>
+        <li><article class="materia">
+          <svg class="ilus" viewBox="0 0 640 260" role="img" aria-label="Ilustração: cabeça de robô" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2f08"/><stop offset="1" stop-color="#0b0b0c"/></linearGradient></defs>
+            <rect width="640" height="260" fill="url(#g4)"/>
+            <g fill="none" stroke="#ffcd1e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M320 62V34"/><circle cx="320" cy="26" r="10" fill="#ffcd1e" stroke="none"/><rect x="226" y="62" width="188" height="140" rx="28"/><path d="M226 120h-24v40h24M414 120h24v40h-24"/><circle cx="282" cy="118" r="20" fill="#ffcd1e" stroke="none"/><circle cx="358" cy="118" r="20" fill="#ffcd1e" stroke="none"/><path d="M278 164h84" stroke="#f4f4f5"/><path d="M300 164v14M320 164v14M340 164v14" stroke="#f4f4f5" stroke-width="5"/><path d="M270 202v30h100v-30"/></g>
+          </svg>
+          <span class="tag">Mundo</span>
+          <h3>Robôs chineses abrem a Web Summit em Lisboa</h3>
+          <p>Robôs da empresa chinesa Agibot e agentes de IA dominaram a noite de abertura da Web Summit, na segunda (9), em Lisboa. O fundador do evento, Paddy Cosgrave, disse que as estrelas do futuro da tecnologia vêm da China, e não da Califórnia.</p>
+          <p>O evento espera cerca de 70 mil participantes e mais de 2 mil startups.</p>
+          <p class="fonte">Fonte: <a href="https://pt.euronews.com/2026/11/09/china-exibe-robos-e-agentes-de-ia-na-abertura-da-web-summit-2026-em-lisboa" target="_blank" rel="noopener noreferrer">Euronews</a></p>
+        </article></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="produtos" id="produtos">
     <div class="wrap">
-      <h2 class="titulo">Os produtos da revista</h2>
-            <ul id="lista"></ul>
+      <div id="blocoNovos">
+        <h2 class="titulo">Mais vendidos da Black Friday</h2>
+        <p class="subtitulo">Cinco produtos que estavam na lista de mais vendidos do Mercado Livre em 10 de novembro de 2026.</p>
+        <ul id="listaNovos" class="lista"></ul>
+      </div>
+      <h2 class="titulo segundo">Os produtos da revista</h2>
+      <ul id="lista" class="lista"></ul>
     </div>
   </section>
 
@@ -217,6 +299,85 @@ var PRODUTOS = [
   }
 ];
 
+/* =====================================================================
+   MAIS VENDIDOS DA BLACK FRIDAY
+   ---------------------------------------------------------------------
+   - link: cole o link de afiliado (meli.la) entre as aspas.
+     ENQUANTO O LINK ESTIVER VAZIO (""), O PRODUTO NÃO APARECE NO SITE.
+   - fotos: quando tiver a arte, envie para a pasta img/ e escreva o
+     nome do arquivo na lista, por exemplo ["barbeador.jpg"].
+   ===================================================================== */
+var NOVOS = [
+  {
+    "etiqueta": "Barba e cabelo",
+    "gancho": "Barba em dia sem sair de casa.",
+    "nome": "Philips OneBlade 5 em 1 (QP1425/10)",
+    "resumo": "Aparador e barbeador elétrico que apara, contorna e raspa.",
+    "detalhes": [
+      "Lâmina dupla face para aparar e contornar em qualquer direção",
+      "Pente ajustável 5 em 1, de 1 mm a 5 mm",
+      "À prova d'água: uso seco ou molhado",
+      "Sem fio, com até 30 minutos de autonomia"
+    ],
+    "descricao": "", "duvidas": [], "fotos": ["https://http2.mlstatic.com/D_NQ_NP_750670-MLA118429558724_102026-O.webp"],
+    "link": "https://meli.la/1K6K94J"
+  },
+  {
+    "etiqueta": "Ferramentas",
+    "gancho": "Chega de pedir furadeira emprestada.",
+    "nome": "Parafusadeira e furadeira de impacto The Black Tools TB-21PX",
+    "resumo": "Parafusadeira e furadeira de impacto com maleta.",
+    "detalhes": [
+      "Acompanha 2 baterias",
+      "Vem com maleta de transporte",
+      "Função parafusadeira e função reversa",
+      "Voltagem 127/220V"
+    ],
+    "descricao": "", "duvidas": [], "fotos": ["https://http2.mlstatic.com/D_NQ_NP_981459-MLA117136184907_092026-O.webp"],
+    "link": "https://meli.la/2vgNHeD"
+  },
+  {
+    "etiqueta": "Carro e moto",
+    "gancho": "Pneu murcho não escolhe hora.",
+    "nome": "Compressor de ar portátil Verunto VER-B15",
+    "resumo": "Compressor portátil com tela digital para carro, moto e bicicleta.",
+    "detalhes": [
+      "Pressão máxima de até 150 psi",
+      "Tela digital que mostra a pressão durante a calibragem",
+      "Fluxo de ar de 25 L/min",
+      "Para pneus de carro, moto e bicicleta"
+    ],
+    "descricao": "", "duvidas": [], "fotos": ["https://http2.mlstatic.com/D_NQ_NP_678551-MLA92916337221_092025-O.webp"],
+    "link": "https://meli.la/23Vm9DZ"
+  },
+  {
+    "etiqueta": "Games",
+    "gancho": "Para ouvir cada passo do adversário.",
+    "nome": "Headset gamer Redragon Zeus Lite",
+    "resumo": "Headset gamer com drivers de 53 mm e microfone removível.",
+    "detalhes": [
+      "Drivers de 53 mm",
+      "Microfone removível",
+      "Conector P3 de 3,5 mm, liga direto no controle do PlayStation 5"
+    ],
+    "descricao": "", "duvidas": [], "fotos": ["https://http2.mlstatic.com/D_NQ_NP_743438-MLA105468591979_012026-O.webp"],
+    "link": "https://meli.la/1fPPq9K"
+  },
+  {
+    "etiqueta": "Moda masculina",
+    "gancho": "Quatro camisetas e a semana de treino resolvida.",
+    "nome": "Kit 4 camisetas dry-fit masculinas Sandrini",
+    "resumo": "Kit com 4 camisetas masculinas para academia e caminhada.",
+    "detalhes": [
+      "Kit com 4 camisetas",
+      "Tecido dry-fit",
+      "Para academia e caminhada"
+    ],
+    "descricao": "", "duvidas": [], "fotos": ["https://http2.mlstatic.com/D_NQ_NP_626928-MLB82004918446_022025-O.webp"],
+    "link": "https://meli.la/1iqvG1E"
+  }
+];
+
 var SOBRE = "Siga a revista no Instagram para ver as próximas edições.";
 
 /* Links dos botões. Deixe vazio ("") para o botão não aparecer.
@@ -226,12 +387,12 @@ var INSTAGRAM = "https://www.instagram.com/olavo_mauricio";
 var WHATSAPP = "https://wa.me/message/KQNRJPBPFKBJN1";
 /* ================== daqui para baixo não precisa mexer ================== */
 
-var lista = document.getElementById("lista");
-
-PRODUTOS.forEach(function (p) {
+function montar(itens, lista) {
+itens.forEach(function (p) {
+  if (!p.link) return;
   var li = document.createElement("li");
   var art = document.createElement("article");
-  art.className = "produto";
+  art.className = "produto" + (p.fotos.length ? "" : " semfoto");
 
   /* galeria */
   var gal = document.createElement("div");
@@ -244,7 +405,9 @@ PRODUTOS.forEach(function (p) {
   p.fotos.forEach(function (f, i) {
     var fig = document.createElement("figure");
     var img = document.createElement("img");
-    img.src = "img/" + f;
+    img.src = /^https?:/.test(f) ? f : "img/" + f;
+    img.referrerPolicy = "no-referrer";
+    img.onerror = function () { gal.hidden = true; art.className = "produto semfoto"; };
     img.alt = p.nome + " (foto " + (i + 1) + " de " + p.fotos.length + ")";
     if (i > 0) img.loading = "lazy";
     fig.appendChild(img);
@@ -288,7 +451,7 @@ PRODUTOS.forEach(function (p) {
     atualizar();
     setTimeout(atualizar, 0);
   }
-  art.appendChild(gal);
+  if (p.fotos.length) art.appendChild(gal);
 
   /* informações */
   var info = document.createElement("div");
@@ -299,7 +462,9 @@ PRODUTOS.forEach(function (p) {
   var resumo = document.createElement("p"); resumo.className = "resumo"; resumo.textContent = p.resumo;
   var ul = document.createElement("ul"); ul.className = "det";
   p.detalhes.forEach(function (t) { var l = document.createElement("li"); l.textContent = t; ul.appendChild(l); });
-  info.appendChild(tag); info.appendChild(pub); info.appendChild(h3); info.appendChild(resumo); info.appendChild(ul);
+  info.appendChild(tag); info.appendChild(pub);
+  if (p.gancho) { var g = document.createElement("p"); g.className = "gancho"; g.textContent = p.gancho; info.appendChild(g); }
+  info.appendChild(h3); info.appendChild(resumo); info.appendChild(ul);
 
   if (p.descricao) {
     var det = document.createElement("details");
@@ -323,13 +488,17 @@ PRODUTOS.forEach(function (p) {
   var nota = document.createElement("p"); nota.className = "nota"; nota.textContent = "Você será levado ao Mercado Livre para finalizar a compra.";
   info.appendChild(a); info.appendChild(nota);
   var cred = document.createElement("p"); cred.className = "credito";
-  cred.textContent = "Imagens do anúncio no Mercado Livre. Direitos reservados aos respectivos proprietários.";
-  info.appendChild(cred);
+  cred.textContent = p.arte ? "Imagem ilustrativa criada com IA. O produto real é o do anúncio no Mercado Livre." : "Imagens do anúncio no Mercado Livre. Direitos reservados aos respectivos proprietários.";
+  if (p.fotos.length) info.appendChild(cred);
 
   art.appendChild(info);
   li.appendChild(art);
   lista.appendChild(li);
 });
+}
+montar(NOVOS, document.getElementById("listaNovos"));
+montar(PRODUTOS, document.getElementById("lista"));
+if (!document.getElementById("listaNovos").children.length) document.getElementById("blocoNovos").hidden = true;
 
 document.getElementById("textoSobre").textContent = SOBRE;
 var linksEl = document.getElementById("links");
