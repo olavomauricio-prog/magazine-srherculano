@@ -133,7 +133,7 @@
       <div class="kicker">Edição especial · Novembro 2026</div>
       <h1>Magazine <em>Sr. Herculano</em></h1>
       <p class="lead">As notícias de tecnologia da semana e os mais vendidos da Black Friday. Toque em <strong>Comprar no Mercado Livre</strong> para ver o anúncio, o preço e as condições.</p>
-      <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver os produtos</a><a class="cta alt" href="#noticias">Ler as notícias</a></div>
+      <div class="botoes" id="topoBotoes"><a class="cta" href="#produtos">Ver notícias e produtos</a></div>
       <div class="aviso"><strong>#publi · Publicidade:</strong> os botões "Comprar no Mercado Livre" levam ao Mercado Livre e são <strong>links de afiliado</strong>. Se você comprar por eles, posso receber uma comissão, sem custo adicional para você.</div>
     </div>
   </div>
@@ -209,8 +209,8 @@
   <section class="produtos" id="produtos">
     <div class="wrap">
       <div id="blocoNovos">
-        <h2 class="titulo">Mais vendidos da Black Friday</h2>
-        <p class="subtitulo">Cinco produtos que estavam na lista de mais vendidos do Mercado Livre em 10 de novembro de 2026.</p>
+        <h2 class="titulo">Notícias e mais vendidos</h2>
+        <p class="subtitulo">A tecnologia da semana e cinco produtos que estavam entre os mais vendidos do Mercado Livre em 10 de novembro de 2026.</p>
         <ul id="listaNovos" class="lista"></ul>
       </div>
       <h2 class="titulo segundo">Os produtos da revista</h2>
@@ -497,6 +497,19 @@ itens.forEach(function (p) {
 });
 }
 montar(NOVOS, document.getElementById("listaNovos"));
+/* intercala: produto, notícia, produto, notícia... */
+(function () {
+  var alvo = document.getElementById("listaNovos");
+  var prods = Array.prototype.slice.call(alvo.children);
+  var nots = Array.prototype.slice.call(document.querySelectorAll("#noticias .materias > li"));
+  if (!prods.length) return;
+  var n = Math.max(prods.length, nots.length);
+  for (var i = 0; i < n; i++) {
+    if (prods[i]) alvo.appendChild(prods[i]);
+    if (nots[i]) alvo.appendChild(nots[i]);
+  }
+  document.getElementById("noticias").hidden = true;
+})();
 montar(PRODUTOS, document.getElementById("lista"));
 if (!document.getElementById("listaNovos").children.length) document.getElementById("blocoNovos").hidden = true;
 
